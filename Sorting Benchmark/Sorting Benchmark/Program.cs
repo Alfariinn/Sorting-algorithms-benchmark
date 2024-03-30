@@ -10,9 +10,9 @@ namespace Sorting_Benchmark
     {
         static void Main(string[] args)
         {
-            int[] arr = Generators.GenerateRandom(10, 0, 100);
+            int[] arr = Generators.GenreateAlmostSorted(10, 0, 100,0.1);
 
-            SortingAlgorithms.InsertionSort(arr);
+            //SortingAlgorithms.InsertionSort(arr);
 
             PrintArray(arr);
 
@@ -24,6 +24,7 @@ namespace Sorting_Benchmark
             for (int i = 0; i < n; ++i)
                 Console.Write(arr[i] + " ");
             Console.WriteLine();
+
         }
 
 

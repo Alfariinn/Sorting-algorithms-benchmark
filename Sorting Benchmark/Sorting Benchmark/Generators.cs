@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,5 +35,24 @@ namespace Sorting_Benchmark
             return a;
         }
 
+        public static int[] GenreateAlmostSorted(int size, int minVal, int maxVal, double shuffledPercentAmount)
+        {
+            int[] a = GenerateSorted(size, minVal, maxVal);
+            Array.Sort(a);
+
+            Random rand = new Random();
+            for (int i = 0; i < size; i++)
+            {
+                if (rand.NextDouble() < shuffledPercentAmount)
+                {
+                    int randomIndex = rand.Next(size);
+                    int temp = a[i];
+                    a[i] = a[randomIndex];
+                    a[randomIndex] = temp;
+                }
+            }
+
+            return a;
+        }
     }
 }
