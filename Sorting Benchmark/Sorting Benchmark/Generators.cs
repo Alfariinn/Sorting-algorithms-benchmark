@@ -11,7 +11,8 @@ namespace Sorting_Benchmark
         public static int[] GenerateRandom(int size, int minVal, int maxVal)
         {
             int[] a = new int[size];
-            foreach (int i in a)
+
+            for (int i = 0; i < size; i++)
             {
                 a[i] = new Random().Next(minVal, maxVal);
             }
