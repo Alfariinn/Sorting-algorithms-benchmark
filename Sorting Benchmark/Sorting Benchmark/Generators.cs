@@ -35,7 +35,7 @@ namespace Sorting_Benchmark
             return a;
         }
 
-        public static int[] GenreateAlmostSorted(int size, int minVal, int maxVal, double shuffledPercentAmount)
+        public static int[] GenerateAlmostSorted(int size, int minVal, int maxVal, double shuffledPercentAmount)
         {
             int[] a = GenerateSorted(size, minVal, maxVal);
             Array.Sort(a);

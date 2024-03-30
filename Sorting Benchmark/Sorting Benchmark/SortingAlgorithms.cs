@@ -103,7 +103,8 @@ namespace Sorting_Benchmark
         // Main function that
         // sorts arr[l..r] using
         // merge()
-        public static void MergeSort(int[] arr, int l, int r)
+        public static void MergeSort(int[] arr) { MergeSort(arr, 0, arr.Length - 1); }
+         static void MergeSort(int[] arr, int l, int r)
         {
             if (l < r)
             {
@@ -164,7 +165,8 @@ namespace Sorting_Benchmark
         // arr[] --> Array to be sorted,
         // low --> Starting index,
         // high --> Ending index
-        public static void QuickSort(int[] arr, int low, int high)
+        public static void QuickSortClassic(int[] arr) { QuickSortClassic(arr, 0, arr.Length - 1); }
+        public static void QuickSortClassic(int[] arr, int low, int high)
         {
             if (low < high)
             {
@@ -175,8 +177,8 @@ namespace Sorting_Benchmark
 
                 // Separately sort elements before
                 // and after partition index
-                QuickSort(arr, low, pi - 1);
-                QuickSort(arr, pi + 1, high);
+                QuickSortClassic(arr, low, pi - 1);
+                QuickSortClassic(arr, pi + 1, high);
             }
 
         }
